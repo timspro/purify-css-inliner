@@ -1,0 +1,38 @@
+{
+  "name": "purify-css-inliner",
+  "version": "0.0.1",
+  "description": "Find only used CSS from HTML and inline it",
+  "main": "./src/purifycssinliner.js",
+  "dependencies": {
+    "cached-request": "^1.1.2",
+    "cheerio": "^1.0.0-rc.2",
+    "purify-css": "^1.2.5",
+    "request": "^2.85.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.0.5"
+  },
+  "scripts": {
+    "test": "mocha --timeout 10000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/purifycssinlined/purifycssinliner.git"
+  },
+  "keywords": [
+    "optimize",
+    "css",
+    "remove",
+    "unused",
+    "inline"
+  ],
+  "author": "Tim Sprowl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/purifycss/purifycssinlined/issues"
+  },
+  "bin": {
+    "purifycss": "./bin/purifycss"
+  },
+  "homepage": "https://github.com/purifycss/purifycssinliner"
+}

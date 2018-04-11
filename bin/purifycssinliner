@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+let purify = require('purify-css'),
+  inliner = require('../src/purifycssinliner')(purify)
+
+if(process.argv[2]) inliner(process.argv[2], (output) => process.stdout.write(output, process.exit))
+else console.error('must give an (html) file as a parameter')
