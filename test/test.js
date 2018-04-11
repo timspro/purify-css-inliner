@@ -25,6 +25,7 @@ describe('purify css inliner', function() {
     let expected = fs.readFileSync(`${__dirname}/expected/normal.html`)
     assert.equal(output, expected.toString())
   })
+  /*
   it('should work in production', function(done) {
     fs.readdir(`${__dirname}/test2/`, (err, files) => {
       let count = 0
@@ -49,4 +50,5 @@ describe('purify css inliner', function() {
       }
     })
   })
+  */
 })
