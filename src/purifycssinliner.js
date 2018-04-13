@@ -13,8 +13,7 @@ module.exports = (purify) => (filename, callback) => {
   cached.setCacheDirectory('/tmp/critical_cache')
 
   let final = '', count = 0, found = 0
-  $('head link').each((i, thing) => {
-    if(thing.attribs.rel !== 'stylesheet') return
+  $('head link[rel=stylesheet]').each((i, thing) => {
     let href = thing.attribs.href
     final += `  @import "${href}";\n`
     count++
@@ -53,7 +52,7 @@ module.exports = (purify) => (filename, callback) => {
 
     if(fonts) $('head').append(`<style>\n${fonts}</style>\n`)
     if(final) $('body').append(`<style>\n${final}</style>\n`)
-    $('head link').each((i, thing) => { $(thing).remove() })
+    $('head link[rel=stylesheet]').each((i, thing) => { $(thing).remove() })
     //console.log(css)
     purify(html, css.join(''), {minify: true}, (output) => {
       $('head').append(`<style>\n${output}\n</style>\n`)

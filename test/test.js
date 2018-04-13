@@ -23,7 +23,7 @@ describe('purify css inliner', function() {
     fs.writeFileSync(`${__dirname}/output/command.html`, output)
 
     let expected = fs.readFileSync(`${__dirname}/expected/normal.html`)
-    assert.equal(output, expected.toString())
+    assert.equal(output.toString(), expected.toString())
   })
   /*
   it('should work in production', function(done) {
