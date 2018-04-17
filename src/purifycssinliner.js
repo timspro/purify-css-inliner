@@ -10,7 +10,7 @@ module.exports = (purify) => (filename, callback) => {
     cheerio = require('cheerio'),
     $ = cheerio.load(html)
 
-  cached.setCacheDirectory('/tmp/critical_cache')
+  cached.setCacheDirectory(`/tmp/critical_cache/${process.pid}`)
 
   let final = '', count = 0, found = 0
   $('head link[rel=stylesheet]').each((i, thing) => {
