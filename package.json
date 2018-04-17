@@ -1,6 +1,6 @@
 {
   "name": "purify-css-inliner",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Find only used CSS from HTML and inline it",
   "main": "./src/purifycssinliner.js",
   "dependencies": {

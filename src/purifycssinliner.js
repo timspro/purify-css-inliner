@@ -52,7 +52,10 @@ module.exports = (purify) => (filename, callback) => {
 
     if(fonts) $('head').append(`<style>\n${fonts}</style>\n`)
     if(final) $('body').append(`<style>\n${final}</style>\n`)
-    $('head link[rel=stylesheet]').each((i, thing) => { $(thing).remove() })
+    $('head link[rel=stylesheet]').each((i, thing) => {
+      $(thing).attr('rel', 'preload')
+      $(thing).attr('as', 'style')
+    })
     //console.log(css)
     purify(html, css.join(''), {minify: true}, (output) => {
       $('head').append(`<style>\n${output}\n</style>\n`)
